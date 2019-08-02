@@ -69,4 +69,3 @@
   * 初始化MySQL数据库的表结构和初始数据
   * 构建Logstash数据处理流水线：接受Web上的JSON请求（HTTP input plugin）、丰富JSON的元数据（SQL plugin）、存储结果文档到Elasticsearch
   * 在Kibana中创建应用的可视化界面：配置Index pattern、构建可视化组件、创建可视化仪表板展示大屏幕
-  * 【也可以在Resberry上搭建一套类似的应用，所有学员可以把它当做数据源】
