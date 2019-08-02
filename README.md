@@ -2,9 +2,7 @@
 
 本工作坊包含了一系列实战练习（Lab），目标是让工程师们能快速上手Elastic Stack的各种常用业务场景，为步入其它高级应用场景打下坚实的基础。Elastic Stack的核心是Elasticsearch，本Workshop将包含其它相关组件，包括Filebeat、Metricbeat、Logstash和Kibana。
 
-
-
-##目录
+## 目录
 
 * 获得和准备实验环境
   * 学员本地电脑环境需求
