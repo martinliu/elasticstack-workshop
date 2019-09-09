@@ -1,4 +1,4 @@
-baseURL = "https://elk.martinliu.cn"
+#baseURL = "https://elk.martinliu.cn"
 
 languageCode = "zh-cn"
 DefaultContentLanguage = "zh"

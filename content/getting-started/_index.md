@@ -7,6 +7,10 @@ draft: false
 weight: 5
 ---
 
+在进行任何实验练习前，请先确保至少使用下面的任何一种方式，准备自己本次的实验环境。
+
+本工作坊以动手实验为主，请确保可以得到一个能全程独占式操作和使用的实验环境。
+
 ## [本地安装](./installation)
 
 在本机安装ELK软件。
@@ -32,6 +36,8 @@ weight: 5
 访问  注册试用账号。
 
 
-## [Configuration](./configuration)
+## [环境就绪确认](./configuration)
 
-You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme's features.
+这里提供了你进入到下一章的环境确认条目。
+
+
