@@ -19,7 +19,7 @@ weight: 5
 在笔记本电脑本机的操作系统上使用'VirtualBox'软件创建虚拟机，并安装一个CentOS 7.6的虚拟机，
 
 
-## [获得Elastic云环境](./installation)
+## [获得Elastic云环境](./1/)
 
 访问 http://cloud.elastic.co/ 注册试用账号。
 
