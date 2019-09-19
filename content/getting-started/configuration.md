@@ -2,89 +2,32 @@
 title: "环境确认"
 date: 2017-10-17T15:26:15Z
 draft: false
-weight: 200
+weight: 12
 ---
 
-You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme’s features.
+在浏览器中访问 Kibana 控制台页面，在 Kibana 的开发者工具中输入如下查询命令，点击每一条命令之后的三角形执行按钮，查看并思考查询结果的含义。
 
-For an example of `config.toml`, see [config.toml](https://github.com/thingsym/hugo-theme-techdoc/blob/master/exampleSite/config.toml) in exampleSite.
+```python
 
-## Params
+GET _search
 
-    # Souce Code repository section
-    description = "put your description"
-    github_repository = "https://github.com/thingsym/hugo-theme-techdoc"
-    version = "0.2.2"
+GET /
 
-    # Documentation repository section
-    # documentation repository (set edit link to documentation repository)
-    github_doc_repository = "https://github.com/thingsym/hugo-theme-techdoc"
+GET /_cluster/stats
 
-    # Analytic section
-    google_analytics_id = "" # Your Google Analytics tracking id
-    tag_manager_container_id = "" # Your Google Tag Manager container id
-    google_site_verification = "" # Your Google Site Verification
+GET /_cat/nodes?v
 
-    # Theme settings section
-    dateformat = "" # default "2 Jan 2006"
+GET /_cat/indices?v
 
-    # path name excluded from document menu
-    menu_exclusion = ["archives", "blog", "entry", "post", "posts"]
-
-#### `description`
-
-The document summary
-
-default: `put your description`
-
-#### `github_repository`
-
-URL of souce code repository
-
-default: `https://github.com/thingsym/hugo-theme-techdoc`
-
-#### `version`
-
-The version of souce code
-
-default: `0.2.2`
-
-#### `github_doc_repository`
-
-URL of documentation repository for editting
-
-default: `https://github.com/thingsym/hugo-theme-techdoc`
-
-#### `google_analytics_id`
-
-ID of Google Analytics
-
-default: `""`
-
-Container ID of Google Tag Manager
-
-#### `tag_manager_container_id`
-
-default: `""`
-
-#### `google_site_verification`
-
-Content value in meta tag `google-site-verification` for Google Search Console
-
-```
-<meta name="google-site-verification" content="e7-viorjjfiihHIoowh8KLiowhbs" />
+GET /_cat/shards
 ```
 
-default: `""`
+删除掉黄色方块区域里的旧代码，复制以上代码，进行测试，输入光标移动到每一行之后，点击右边的三角形按钮。
 
-#### `dateformat`
+![](/media/15689026783274.jpg)
 
-default: `""` as `2 Jan 2006`
+ {{% panel status="success" title="成功" %}}
+Kibana 开发者工具能正常查询和使用，和周边的同学讨论每一行查询结果的含义。
+ {{% /panel %}}
 
-#### `menu_exclusion`
 
-Path name excluded from documentation menu
-
-By default, we exclude commonly used folder names in blogs.
-
-default: `["archives", "blog", "entry", "post", "posts"]`
