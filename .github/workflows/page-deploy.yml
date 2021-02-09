@@ -37,6 +37,21 @@ jobs:
     - name: Build blog site
       run: hugo --minify
 
+    # Step 5 - check-out codelabs 代码库，构建长教程
+    - name: Checkout tools repo
+      uses: actions/checkout@v2
+      with:
+        repository: elk-workshop/codelabs
+        path: .
+
+    # Runs a set of commands using the runners shell
+    - name: Setup claat and build codelabs
+      run: |
+        ls
+        curl -O https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64
+        chmod +x claat-linux-amd64
+        ./claat-linux-amd64 help
+
     # Step 4 - 用最新版本的 Hugo 构建个人博客站点
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
