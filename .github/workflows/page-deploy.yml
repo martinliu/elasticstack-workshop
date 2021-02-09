@@ -37,6 +37,18 @@ jobs:
     - name: Build blog site
       run: hugo --minify
 
+    # Step 4 - 用最新版本的 Hugo 构建个人博客站点
+    - name: prepare to publish
+      run: |
+        pwd
+        ls
+
+    # Runs a set of commands using the runners shell
+    - name: Setup claat and build codelabs
+      run: |
+        curl -L https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64 > claat
+        chmod +x claat
+        ./claat help
 
     # Step 4 - 用最新版本的 Hugo 构建个人博客站点
     - name: Deploy
