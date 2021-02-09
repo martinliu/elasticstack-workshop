@@ -1,27 +1,27 @@
-baseURL = "https://example.com"
+baseURL = "https://elk-workshop.github.io/"
 
-languageCode = "en-us"
-DefaultContentLanguage = "en"
-title = "Hugo Techdoc Theme"
+languageCode = "zh-cn"
+DefaultContentLanguage = "zh"
+title = "Elastic Stack Workshop"
 theme = "hugo-theme-techdoc"
 
 hasCJKLanguage = true
 metaDataFormat = "yaml"
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
 [params]
 
-    # Source Code repository section
-    description = "put your description"
-    github_repository = "https://github.com/thingsym/hugo-theme-techdoc"
-    version = "0.9.6"
+    # Souce Code repository section
+    description = "为Elastic技术社区精心打造"
+    github_repository = "https://github.com/martinliu/elasticstack-workshop"
+    version = "0.1.0"
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
-    github_doc_repository = "https://github.com/thingsym/hugo-theme-techdoc"
+    github_doc_repository = "https://github.com/martinliu/elasticstack-workshop"
 
     # Analytic section
     google_analytics_id = "" # Your Google Analytics tracking id
@@ -32,7 +32,7 @@ enableMissingTranslationPlaceholders = false
     # Open Graph settings for each page are set on the front matter.
     # See https://gohugo.io/templates/internal/#open-graph
     # See https://gohugo.io/templates/internal/#twitter-cards
-    title = "Hugo Techdoc Theme"
+    title = "Elastic Stack  "
     images = ["images/og-image.png"] # Open graph images are placed in `static/images`
 
     # Theme settings section
@@ -46,7 +46,7 @@ enableMissingTranslationPlaceholders = false
     menu_style = "open-menu" # "open-menu" or "slide-menu" or "" blank is as no sidebar
 
     # Date format
-    dateformat = "" # default "2 Jan 2006"
+    dateformat = "2006-01-02" # default "2 Jan 2006"
     # See the format reference https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
 
     # path name excluded from documentation menu
@@ -61,10 +61,10 @@ enableMissingTranslationPlaceholders = false
 
     # Algolia site search section
     # See https://www.algolia.com/doc/
-    algolia_search_enable = true
-    algolia_indexName = "hugo-demo-techdoc"
-    algolia_appId = "7W4SAN4PLK"
-    algolia_apiKey = "cbf12a63ff72d9c5dc0c10c195cf9128" # Search-Only API Key
+    #algolia_search_enable = true
+    #algolia_indexName = "hugo-demo-techdoc"
+    #algolia_appId = "7W4SAN4PLK"
+    #algolia_apiKey = "cbf12a63ff72d9c5dc0c10c195cf9128" # Search-Only API Key
 
 # Global menu section
 # See https://gohugo.io/content-management/menus/
@@ -91,28 +91,4 @@ enableMissingTranslationPlaceholders = false
         ordered = false
 
 [outputs]
-    home = ["HTML", "RSS", "Algolia"]
-
-# Algolia Search configure section
-[outputFormats.Algolia]
-    baseName = "algolia"
-    mediaType = "application/json"
-    isPlainText = true
-    notAlternative = true
-
-[params.algolia]
-    vars = [
-        "title",
-        "summary",
-        "content",
-        "date",
-        "publishdate",
-        "description",
-        "permalink",
-        "keywords",
-        "lastmod",
-    ]
-    params = [
-        "tags",
-        "categories",
-    ]
+    home = ["HTML", "RSS"]
