@@ -1,12 +1,13 @@
 ---
 title: "Build-in Shortcodes"
 date: 2017-10-17T15:26:15Z
-draft: true
+draft: false
 weight: 10
 description: "calling built-in Shortcodes into your content files."
+TableOfContents: true
 ---
 
-See https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes
+See https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes
 
 ## figure
 
@@ -28,10 +29,6 @@ See https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortco
   </div>
 </section>
 {{< /highlight >}}
-
-## instagram
-
-{{< instagram BWNjjyYFxVx >}}
 
 ## tweet
 

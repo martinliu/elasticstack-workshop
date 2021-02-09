@@ -1,33 +1,195 @@
 ---
-title: "环境确认"
+title: "Configuration"
 date: 2017-10-17T15:26:15Z
+lastmod: 2019-10-26T15:26:15Z
 draft: false
-weight: 12
+weight: 20
 ---
 
-在浏览器中访问 Kibana 控制台页面，在 Kibana 的开发者工具中输入如下查询命令，点击每一条命令之后的三角形执行按钮，查看并思考查询结果的含义。
+You may specify options in config.toml (or config.yaml/config.json) of your site to make use of this theme’s features.
 
-```python
+For an example of `config.toml`, see [config.toml](https://github.com/thingsym/hugo-theme-techdoc/blob/master/exampleSite/config.toml) in exampleSite.
 
-GET _search
+## Params
 
-GET /
+    # Source Code repository section
+    description = "put your description"
+    github_repository = "https://github.com/thingsym/hugo-theme-techdoc"
+    version = "0.9.6"
 
-GET /_cluster/stats
+    # Documentation repository section
+    # documentation repository (set edit link to documentation repository)
+    github_doc_repository = "https://github.com/thingsym/hugo-theme-techdoc"
 
-GET /_cat/nodes?v
+    # Analytic section
+    google_analytics_id = "" # Your Google Analytics tracking id
+    tag_manager_container_id = "" # Your Google Tag Manager container id
+    google_site_verification = "" # Your Google Site Verification for Search Console
 
-GET /_cat/indices?v
+    # Open Graph and Twitter Cards settings section
+    # Open Graph settings for each page are set on the front matter.
+    # See https://gohugo.io/templates/internal/#open-graph
+    # See https://gohugo.io/templates/internal/#twitter-cards
+    title = "Hugo Techdoc Theme"
+    images = ["images/og-image.png"] # Open graph images are placed in `static/images`
 
-GET /_cat/shards
+    # Theme settings section
+    # Theme color
+    # See color value reference https://developer.mozilla.org/en-US/docs/Web/CSS/color
+    custom_font_color = ""
+    custom_background_color = ""
+
+    # Documentation Menu section
+    # Menu style settings
+    menu_style = "open-menu" # "open-menu" or "slide-menu" or "" blank is as no sidebar
+
+    # Date format
+    dateformat = "" # default "2 Jan 2006"
+    # See the format reference https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+
+    # path name excluded from documentation menu
+    menu_exclusion = [
+        "archives",
+        "archive",
+        "blog",
+        "entry",
+        "post",
+        "posts",
+    ]
+
+    # Algolia site search section
+    # See https://www.algolia.com/doc/
+    algolia_search_enable = true
+    algolia_indexName = "hugo-demo-techdoc"
+    algolia_appId = "7W4SAN4PLK"
+    algolia_apiKey = "cbf12a63ff72d9c5dc0c10c195cf9128" # Search-Only API Key
+
+#### `description`
+
+The document summary
+
+default: `put your description`
+
+#### `github_repository`
+
+URL of souce code repository
+
+default: `https://github.com/thingsym/hugo-theme-techdoc`
+
+#### `version`
+
+The version of souce code
+
+default: `0.9.6`
+
+#### `github_doc_repository`
+
+URL of documentation repository for editting
+
+default: `https://github.com/thingsym/hugo-theme-techdoc`
+
+#### `google_analytics_id`
+
+ID of Google Analytics
+
+default: `""`
+
+#### `tag_manager_container_id`
+
+Container ID of Google Tag Manager
+
+default: `""`
+
+#### `google_site_verification`
+
+Content value in meta tag `google-site-verification` for Google Search Console
+
+```
+<meta name="google-site-verification" content="e7-viorjjfiihHIoowh8KLiowhbs" />
 ```
 
-删除掉黄色方块区域里的旧代码，复制以上代码，进行测试，输入光标移动到每一行之后，点击右边的三角形按钮。
+default: `""`
 
-![](/media/15689026783274.jpg)
+#### `title`
 
- {{% panel status="success" title="成功" %}}
-Kibana 开发者工具能正常查询和使用，和周边的同学讨论每一行查询结果的含义。
- {{% /panel %}}
+default open graph title for open graph
+
+default: `"Hugo Techdoc Theme"`
+
+#### `images`
+
+default open graph image for open graph
+
+Open graph images are placed in `static/images`.
+
+default: `["images/og-image.png"]`
+
+#### `custom_font_color`
+
+Header font color
+
+See color value reference https://developer.mozilla.org/en-US/docs/Web/CSS/color
 
 
+default: `""`
+
+#### `custom_background_color`
+
+Header background color
+
+See color value reference https://developer.mozilla.org/en-US/docs/Web/CSS/color
+
+default: `""`
+
+#### `menu_style`
+
+Documentation Menu style, Open Menu or Slide Menu
+
+default: `open-menu`  
+value: `open-menu` | `slide-menu`
+
+#### `dateformat`
+
+default: `""` as `2 Jan 2006`
+
+#### `menu_exclusion`
+
+Path name excluded from documentation menu
+
+By default, we exclude commonly used folder names in blogs.
+
+default: `[
+        "archives",
+        "archive",
+        "blog",
+        "entry",
+        "post",
+        "posts"
+    ]`
+
+
+#### `algolia_search_enable`
+
+Enable Algolia search
+
+default: `true`
+
+value: `true` | `false`
+
+#### `algolia_indexName`
+
+Algolia index name
+
+default: `hugo-demo-techdoc`
+
+#### `algolia_appId`
+
+Application id
+
+default: `7W4SAN4PLK`
+
+#### `algolia_apiKey`
+
+Search-Only API Key
+
+default: `cbf12a63ff72d9c5dc0c10c195cf9128`
