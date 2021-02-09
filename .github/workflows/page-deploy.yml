@@ -39,7 +39,9 @@ jobs:
 
     # Step 4 - 用最新版本的 Hugo 构建个人博客站点
     - name: prepare to publish
-      run: ls
+      run: |
+        pwd
+        ls
 
 
     # Step 5 - check-out codelabs 代码库，构建长教程
@@ -52,6 +54,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Setup claat and build codelabs
       run: |
+        pwd
         ls
         curl -L https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64 > claat
         chmod +x claat
