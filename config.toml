@@ -39,7 +39,7 @@ enableMissingTranslationPlaceholders = false
     # Theme color
     # See color value reference https://developer.mozilla.org/en-US/docs/Web/CSS/color
     custom_font_color = ""
-    custom_background_color = "rgb(47,67,145)"
+    custom_background_color = "rgb(0,191,179)"
 
     # Documentation Menu section
     # Menu style settings
