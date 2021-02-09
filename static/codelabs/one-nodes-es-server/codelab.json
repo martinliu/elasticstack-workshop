@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-12-09T22:08:30+08:00",
+  "id": "one-nodes-es-server",
+  "duration": 36,
+  "title": "搭建单节点 Elasticsearch 集群服务",
+  "authors": "Martin Liu",
+  "summary": "搭建单节点 Elasticsearch 集群服务",
+  "source": "one-node-elastic-stack.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "elasticsearch"
+  ],
+  "tags": [
+    "elasticstack"
+  ],
+  "feedback": "https://martinliu.cn",
+  "ga": "UA-159133967-1",
+  "url": "one-nodes-es-server"
+}

@@ -1,0 +1,29 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-12-23T11:28:06+08:00",
+  "id": "elastic-observability-foundation-qq",
+  "duration": 170,
+  "title": "Elastic Stack 可观测性实战工作坊(腾讯)",
+  "authors": "Martin Liu",
+  "summary": "Elastic Stack 可观测性实战工作坊(腾讯)",
+  "source": "obv-foundation-qq.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "elasticsearch",
+    "beats",
+    "kibana",
+    "observability"
+  ],
+  "tags": [
+    "elasticstack"
+  ],
+  "feedback": "https://martinliu.cn",
+  "ga": "UA-159133967-1",
+  "url": "elastic-observability-foundation-qq"
+}
