@@ -46,7 +46,7 @@ jobs:
       run: |
         curl -L https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64 > claat
         chmod +x claat
-        ./claat export -o public/codelabs codelabs/*.md
+        ./claat export -o public/codelabs -ga UA-749876-6 codelabs/*.md
 
     # Step 4 - 用最新版本的 Hugo 构建个人博客站点
     - name: Deploy
