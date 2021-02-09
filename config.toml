@@ -1,4 +1,4 @@
-baseURL = "https://elk-workshop.github.io/"
+baseURL = "https://elastic.martinliu.cn/"
 
 languageCode = "zh-cn"
 DefaultContentLanguage = "zh"
