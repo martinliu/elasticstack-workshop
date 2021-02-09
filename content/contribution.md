@@ -10,8 +10,8 @@ menu = "main"
 
 本网站包含了两个代码库：
 
-* 主代码库：https://github.com/martinliu/elasticstack-workshop.git
-* 教程代码库：https://github.com/elk-workshop/codelabs.git
+* 主代码库：  [https://github.com/martinliu/elasticstack-workshop.git](https://github.com/martinliu/elasticstack-workshop.git)
+* 教程代码库：  [https://github.com/elk-workshop/codelabs.git](https://github.com/elk-workshop/codelabs.git)
 
 ## 实操练习
 
