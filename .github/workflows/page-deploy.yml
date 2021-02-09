@@ -53,7 +53,7 @@ jobs:
     - name: Setup claat and build codelabs
       run: |
         ls
-        curl -L https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64 claat
+        curl -L https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64 > claat
         chmod +x claat
         ./claat help
 
