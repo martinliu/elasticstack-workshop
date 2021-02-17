@@ -1,14 +1,14 @@
 baseURL = "https://elastic.martinliu.cn/"
 
 languageCode = "zh-cn"
-DefaultContentLanguage = "zh"
+DefaultContentLanguage = "zh-cn"
 title = "Elastic Stack Workshop"
 theme = "hugo-theme-techdoc"
 
 hasCJKLanguage = true
 metaDataFormat = "yaml"
 
-defaultContentLanguage = "zh"
+defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
@@ -93,3 +93,5 @@ enableMissingTranslationPlaceholders = false
 
 [outputs]
     home = ["HTML", "RSS"]
+
+ignoreErrors = ["error-remote-getjson"]
