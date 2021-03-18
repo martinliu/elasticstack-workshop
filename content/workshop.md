@@ -62,5 +62,17 @@ menu = "main"
 
 ## 安全管理方案
 
-> 课件开发中。
+
+
+##### 本地虚拟机环境
+
+可以是用本地虚拟机环境完成所有学习 ，参考下面的课件：
+
+
+
+1. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-security-foundation/#0)
+
+
+
+
 
