@@ -62,15 +62,31 @@ menu = "main"
 
 ## 安全管理
 
+Elastic Security 安全管理工作坊的目标是：通过实操练习和必要的讲解，快速学会使用 ELK 技术栈构建 SIEM 管理平台，在大量复杂的安全事件中分析和完成安全运维和威胁狩猎等各种 SecOps 日常工作。
 
 ##### 本地虚拟机环境
 
 用本地虚拟机环境完成所有学习 ，参考下面的课件：
 
 
-1. [Elastic 安全管理课件](https://elk-workshop.github.io/codelabs/elastic-security-foundation/#0)
+1. [Elastic 安全管理--学员课堂练习课件](https://elk-workshop.github.io/codelabs/elastic-security-foundation/#0)
 
-2. 
+2. [学员课堂学习指南 PPT](https://docs.qq.com/slide/DUG1qWklCTGJncXVO)
 
 
 
+##### AWS 云计算环境
+
+> 课件开发中。
+
+
+
+##### 腾讯云环境
+
+> 课件开发中。
+
+
+
+##### 阿里云环境
+
+> 课件开发中。
