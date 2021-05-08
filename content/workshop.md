@@ -48,7 +48,7 @@ menu = "main"
 可以使用腾讯云计环境，配合以下的课件完成所有练习。
 
 1. 在本环境下，不需要搭建 Elastic Stack 的服务器，参展下面课件的第二步骤，创建 Elasticsearch 服务集群。
-2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation-qq/#0)
+2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation-qq/#0) （版本更新到 7.10.1）
 3. 腾讯云环境录播网址：[腾讯课堂查看](https://cloud.tencent.com/developer/salon/live-1304)
 
 ##### 阿里云计算环境
@@ -69,7 +69,7 @@ Elastic Security 安全管理工作坊的目标是：通过实操练习和必要
 用本地虚拟机环境完成所有学习 ，参考下面的课件：
 
 
-1. [Elastic 安全管理--学员课堂练习课件](https://elk-workshop.github.io/codelabs/elastic-security-foundation/#0)
+1. [Elastic 安全管理--学员课堂练习课件](https://elastic.martinliu.cn/codelabs/elastic-security-foundation/#0)
 
 2. [学员课堂学习指南 PPT](https://docs.qq.com/slide/DUG1qWklCTGJncXVO)
 
