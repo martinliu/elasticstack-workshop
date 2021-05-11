@@ -47,7 +47,7 @@ menu = "main"
 
 可以使用腾讯云计环境，配合以下的课件完成所有练习。
 
-1. 在本环境下，不需要搭建 Elastic Stack 的服务器，参展下面课件的第二步骤，创建 Elasticsearch 服务集群。
+1. 在本环境下，不需要搭建 Elastic Stack 的服务器，参照下面课件的第二步骤，创建 Elasticsearch 服务集群。
 2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation-qq/#0) （版本更新到 7.10.1）
 3. 腾讯云环境录播网址：[腾讯课堂查看](https://cloud.tencent.com/developer/salon/live-1304)
 
@@ -55,7 +55,8 @@ menu = "main"
 
 可以使用阿里云环境，配合以下的课件完成所有练习。
 
-> 课件开发中。
+1. 在阿里云中创建测试集群和虚拟机（详见下面的链接），然后完成下面课件中的所有实操练习。
+2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation-aliyun/#0) （版本更新到 7.10.0）
 
 
 
