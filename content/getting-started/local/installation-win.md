@@ -1,8 +1,8 @@
 ---
-title: "Installation"
-date: 2017-10-17T15:26:15Z
+title: "Windows 本地安装"
+date: 2020-05-31T15:26:15Z
 draft: false
-weight: 10
+weight: 14
 ---
 
 ## Install Hugo theme on your project
@@ -31,6 +31,10 @@ You may specify options in config.toml (or config.yaml/config.json) of your site
 
 For an example of `config.toml`, see [config.toml](https://github.com/thingsym/hugo-theme-techdoc/blob/master/exampleSite/config.toml) in exampleSite.
 
+```
+2021-05-31T19:26:15Z
+```
+
 See [the Configuration documentation](../configuration/).
 
 ## Preview site
@@ -42,3 +46,4 @@ hugo server -t hugo-theme-techdoc
 ```
 
 Browse site on http://localhost:1313
+
