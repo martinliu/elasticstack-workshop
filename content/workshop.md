@@ -18,8 +18,8 @@ menu = "main"
 - 课程详细介绍：[见这篇博客文章](https://martinliu.cn/blog/workshop-elastic-observability/)
 - 课程讲师 PPT：[在线查看](https://docs.qq.com/slide/DUGRzYVVTU3ZxblBP)
 - 本地环境的课件：
-  1. [‘Elastic Stack 单节点搭建’ 课件](https://elk-workshop.github.io/codelabs/one-nodes-es-server/#0)
-  2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation/#0)
+  1. [‘Elastic Stack 单节点搭建’ 课件](/codelabs/one-nodes-es-server/#0)
+  2. [‘Elastic 可观测性方案’ 课件](/codelabs/elastic-observability-foundation/#0)
 - 腾讯云环境录播网址：[腾讯课堂查看](https://cloud.tencent.com/developer/salon/live-1304)
 
 ##### 工作坊课件
@@ -31,16 +31,16 @@ menu = "main"
 
 可以使用本地的 VirtualBox 或者 VMWare 的虚拟机环境，配合以下课件完成所有练习。
 
-1. [‘Elastic Stack 单节点搭建’ 课件](https://elk-workshop.github.io/codelabs/one-nodes-es-server/#0)
-2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation/#0)
+1. [‘Elastic Stack 单节点搭建’ 课件](/codelabs/one-nodes-es-server/#0)
+2. [‘Elastic 可观测性方案’ 课件](/codelabs/elastic-observability-foundation/#0)
 
 
 ##### AWS 云计算环境
 
 可以使用 AWS 云计算（中国区北京或宁夏区）环境，配合以下的课件完成所有练习。
 
-1. [‘Elastic Stack 单节点搭建’ 课件](https://elk-workshop.github.io/codelabs/one-nodes-es-server/#0)
-2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation/#0)
+1. [‘Elastic Stack 单节点搭建’ 课件](/codelabs/one-nodes-es-server/#0)
+2. [‘Elastic 可观测性方案’ 课件](/codelabs/elastic-observability-foundation/#0)
 
 
 ##### 腾讯云计算环境
@@ -48,7 +48,7 @@ menu = "main"
 可以使用腾讯云计环境，配合以下的课件完成所有练习。
 
 1. 在本环境下，不需要搭建 Elastic Stack 的服务器，参照下面课件的第二步骤，创建 Elasticsearch 服务集群。
-2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation-qq/#0) （版本更新到 7.10.1）
+2. [‘Elastic 可观测性方案’ 课件](/codelabs/elastic-observability-foundation-qq/#0) （版本更新到 7.10.1）
 3. 腾讯云环境录播网址：[腾讯课堂查看](https://cloud.tencent.com/developer/salon/live-1304)
 
 ##### 阿里云计算环境
@@ -56,7 +56,7 @@ menu = "main"
 可以使用阿里云环境，配合以下的课件完成所有练习。
 
 1. 在阿里云中创建测试集群和虚拟机（详见下面的链接），然后完成下面课件中的所有实操练习。
-2. [‘Elastic 可观测性方案’ 课件](https://elk-workshop.github.io/codelabs/elastic-observability-foundation-aliyun/#0) （版本更新到 7.10.0）
+2. [‘Elastic 可观测性方案’ 课件](/codelabs/elastic-observability-foundation-aliyun/#0) （版本更新到 7.10.0）
 
 
 
