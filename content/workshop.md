@@ -86,7 +86,7 @@ Elastic Security 安全管理工作坊的目标是：通过实操练习和必要
 
 用腾讯云环境完成所有学习 ，参考下面的课件：
 
-1. [Elastic 安全管理--学员课堂练习课件](https://elastic.martinliu.cn/codelabs/elastic-security-foundation/#0)
+1. [Elastic 安全管理--学员课堂练习课件](https://elastic.martinliu.cn/codelabs/elastic-security-qq/#0)
 
 2. [学员课堂学习指南 PPT](https://docs.qq.com/slide/DUG1qWklCTGJncXVO)
 
@@ -95,3 +95,4 @@ Elastic Security 安全管理工作坊的目标是：通过实操练习和必要
 ##### 阿里云环境
 
 > 课件开发中。
+
