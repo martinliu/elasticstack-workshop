@@ -4,7 +4,11 @@ name: Deploy github-pages
 # 在 master 主干分支的任何 push 事件都会触发本 DevOps 工作流水线
 on:
   push:
-    branches: [ master ]
+    branches:
+      - '!master'
+  pull_request:
+    branches:
+      - master
 
 # 以下是本串行执行工作流的所有组成部分
 jobs:
@@ -15,44 +19,43 @@ jobs:
 
     # 本构建和部署作业的所有步骤定义如下
     steps:
+      # Step 1 - Checks-out Hugo 博客代码库到 $GITHUB_WORKSPACE
+      - name: Checkout blog code repo
+        uses: actions/checkout@v2 # 这是 Github 官方提供的一个动作模块
+        with:
+          submodules: true # 同步更新所使用的 Hugo 模板
+          fetch-depth: 0 # 更新到该模板最新的版本
 
-    # Step 1 - Checks-out Hugo 博客代码库到 $GITHUB_WORKSPACE
-    - name: Checkout blog code repo
-      uses: actions/checkout@v2 # 这是 Github 官方提供的一个动作模块
-      with:
-          submodules: true  # 同步更新所使用的 Hugo 模板
-          fetch-depth: 0    # 更新到该模板最新的版本
-
-    # Step 2 - 配置最新版本的 Hugo 环境
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2  # 这是 Github Actions 市场中的一个动作模块
-      with:
+      # Step 2 - 配置最新版本的 Hugo 环境
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2 # 这是 Github Actions 市场中的一个动作模块
+        with:
           hugo-version: 'latest'
 
-    # Step 3 - 清理代码库中 public 目录中的内容
-    - name: Clean public directory
-      run: rm -rf public  # 彻底删除这个目录
+      # Step 3 - 清理代码库中 public 目录中的内容
+      - name: Clean public directory
+        run: rm -rf public # 彻底删除这个目录
 
-    # Step 4 - 用最新版本的 Hugo 构建个人博客站点
-    - name: Build blog site
-      run: hugo --minify
+      # Step 4 - 用最新版本的 Hugo 构建个人博客站点
+      - name: Build blog site
+        run: hugo --minify
 
-    # Step 5 - 创建用于私有域名所需要的 CNAME 文件
-    - name: Create CNAME file
-      run: echo 'elastic.martinliu.cn' > public/CNAME
+      # Step 5 - 创建用于私有域名所需要的 CNAME 文件
+      - name: Create CNAME file
+        run: echo 'elastic.martinliu.cn' > public/CNAME
 
-    # Runs a set of commands using the runners shell
-    - name: Setup claat and build codelabs
-      run: |
-        curl -L https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64 > claat
-        chmod +x claat
-        ./claat export -o public/codelabs -ga UA-749876-6 codelabs/*.md
+      # Runs a set of commands using the runners shell
+      - name: Setup claat and build codelabs
+        run: |
+          curl -L https://github.com/googlecodelabs/tools/releases/download/v2.2.4/claat-linux-amd64 > claat
+          chmod +x claat
+          ./claat export -o public/codelabs -ga UA-749876-6 codelabs/*.md
 
-    # Step 4 - 用最新版本的 Hugo 构建个人博客站点
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        external_repository: elk-workshop/elk-workshop.github.io
-        publish_branch: master  # default: gh-pages
-        publish_dir: ./public
+      # Step 4 - 用最新版本的 Hugo 构建个人博客站点
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: elk-workshop/elk-workshop.github.io
+          publish_branch: master # default: gh-pages
+          publish_dir: ./public
