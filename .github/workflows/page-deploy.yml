@@ -4,8 +4,8 @@ name: Deploy github-pages
 # 在 master 主干分支的任何 push 事件都会触发本 DevOps 工作流水线
 on:
   push:
-    branches:
-      - **
+  #    branches:
+  #      - **
   pull_request:
     branches:
       - master
