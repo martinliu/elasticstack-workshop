@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
-title: "快速上手指南"
-=======
 title: "新手入门"
->>>>>>> cfbedfc55d450d4fb4991d4ab8b3592c2f6f8453
 date: 2017-10-17T15:26:15Z
 lastmod: 2018-12-08T15:26:15Z
 publishdate: 2018-11-23T15:26:15Z
@@ -14,7 +10,7 @@ images:
 - images/pexels-photo-196666.jpeg
 ---
 
-<<<<<<< HEAD
+
 ## [安装运行 Elasticsearch 服务器](./installation)
 
 下载 Elasticsearch 安装包，并在本机（macOS，Linux操作系统上）运行单节点的 Elasticsearch 服务器 。学习 Elasticsearch 最核心的服务器端配置参数。
