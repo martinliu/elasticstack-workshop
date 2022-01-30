@@ -22,6 +22,7 @@ enableMissingTranslationPlaceholders = false
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
     github_doc_repository = "https://github.com/martinliu/elasticstack-workshop/"
+    github_doc_repository_path = "content/"
 
     # Analytic section
     google_analytics_id = "UA-749876-6" # Your Google Analytics tracking id
