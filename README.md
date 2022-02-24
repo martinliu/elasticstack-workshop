@@ -16,4 +16,3 @@
 
 欢迎参与，详见[贡献说明](content/contribution.md)
 
-test
