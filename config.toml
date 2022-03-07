@@ -25,16 +25,16 @@ enableMissingTranslationPlaceholders = false
     github_doc_repository_path = "content/"
 
     # Analytic section
-    google_analytics_id = "UA-749876-6" # Your Google Analytics tracking id
-    tag_manager_container_id = "" # Your Google Tag Manager container id
-    google_site_verification = "" # Your Google Site Verification for Search Console
+    google_analytics_id = "UA-77731594-1" # Your Google Analytics tracking id - UA-749876-6
+    #tag_manager_container_id = "" # Your Google Tag Manager container id
+    #google_site_verification = "" # Your Google Site Verification for Search Console
 
     # Open Graph and Twitter Cards settings section
     # Open Graph settings for each page are set on the front matter.
     # See https://gohugo.io/templates/internal/#open-graph
     # See https://gohugo.io/templates/internal/#twitter-cards
     title = "Elastic Stack Workshop"
-    images = ["images/og-image.png"] # Open graph images are placed in `static/images`
+    images = ["images/elastic-stack-logo.png"] # Open graph images are placed in `static/images`
 
     # Theme settings section
     # Theme color

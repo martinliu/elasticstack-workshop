@@ -1,0 +1,63 @@
+- type: httpjson
+  interval: 5m
+  config_version: 2
+  request.url: https://api.github.com/repos/elastic/beats/issues?per_page=100
+  request.method: GET
+ 
+  processors:
+    - add_fields:
+        fields:
+          service: github
+ 
+    - decode_json_fields: 
+        fields: ["message"]
+        target: "json"
+    
+    - timestamp: 
+        field: json.created_at
+        layouts:
+          - '2006-01-02T15:04:05Z'
+          - '2006-01-02T15:04:05.999Z'
+          - '2006-01-02T15:04:05.999-07:00'
+        test:
+          - '2019-06-22T16:33:51Z'
+          - '2019-11-18T04:59:51.123Z'
+          - '2020-08-03T07:10:20.123456+02:00'
+ 
+    - fingerprint: 
+        fields: ["json.id"]
+        target_field: "@metadata._id"
+
+
+
+
+# ============================== Filebeat modules ==============================
+
+filebeat.config.modules:
+  # Glob pattern for configuration loading
+  path: ${path.config}/modules.d/*.yml
+
+  # Set to true to enable config reloading
+  reload.enabled: false
+
+# ======================= Elasticsearch template setting =======================
+
+setup.template.settings:
+  index.number_of_shards: 1
+  #index.codec: best_compression
+  #_source.enabled: false
+
+# ================================== Outputs ===================================
+
+# ---------------------------- Elasticsearch Output ----------------------------
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]
+
+# ================================= Processors =================================
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded
+  - add_cloud_metadata: ~
+  - add_docker_metadata: ~
+  - add_kubernetes_metadata: ~
