@@ -15,9 +15,9 @@ enableMissingTranslationPlaceholders = false
 [params]
 
     # Souce Code repository section
-    description = "一个开放免费的技术栈，实现搜索、观测、保护三大解决方案，这里提供了各种教程，欢迎一起学习和共建。"
+    description = "搜索、观测、保护三大解决方案实战教程，各种级别和类型的学习资料，欢迎一起学习和共建。"
     github_repository = "https://github.com/martinliu/elasticstack-workshop"
-    version = "0.1.2"
+    version = "0.1.5"
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)

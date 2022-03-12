@@ -1,0 +1,65 @@
+###################### Filebeat Configuration Example #########################
+
+# ============================== Filebeat inputs ===============================
+
+filebeat.inputs:
+
+# 获取 kubernetes 项目的概要信息 - overall
+# GET /repos/{owner}/{repo}
+- type: httpjson
+  interval: 6m
+  config_version: 2
+  request.url: https://api.github.com/repos/kubernetes/kubernetes
+  request.method: GET
+  # 在请求中增加个人认证令牌，提高数据获取条数限制
+  request.transforms:
+    - set:
+        target: header.Authorization
+        value: 'token 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'  #此处的token示例需要被替换
+  # 使用数据处理器，修整数据
+  processors:
+    # 优化分析：增加方便搜索分析的字段
+    - add_fields:
+        fields:
+          project: kubernetes
+          kpi: overall
+    # 解码裸json结果：json 内容解码为多个字段
+    - decode_json_fields:
+        fields: ["message"]
+        target: "json"
+
+# ======================= Elasticsearch template setting =======================
+
+setup.template.settings:
+  index.number_of_shards: 1
+#   json.enabled: true
+#   json.path: "add_gh_fields.json"
+#   json.name: "add_gh_fields"
+
+# setup.ilm.enabled: false
+
+# ================================== General ===================================
+name: github-crawler
+
+# ================================= Dashboards =================================
+setup.dashboards.enabled: false
+
+# ================================== Outputs ===================================
+
+# ---------------------------- Elasticsearch Output ----------------------------
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+
+# ================================= Processors =================================
+# 删除 Filebeeat 采集到的无关数据，节省存储空间
+processors:
+ - drop_fields:
+     fields: ["ecs", "agent", "log", "input", "host", "message"]    
+
+# ================================== Logging ===================================
+logging.level: debug
+
+# ============================= X-Pack Monitoring ==============================
+monitoring.enabled: true
+
+

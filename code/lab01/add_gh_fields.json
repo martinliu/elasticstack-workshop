@@ -1,0 +1,50 @@
+{
+    "order": 2,
+    "index_patterns": [
+        "filebeat-7.17.0-*"
+    ],
+    "mappings": {
+        "properties": {
+            "json": {
+                "properties": {
+                    "title": {
+                        "type": "text"
+                    },
+                    "updated_at": {
+                        "type": "date"
+                    },
+                    "created_at": {
+                        "type": "date"
+                    },
+                    "closed_at": {
+                        "type": "date"
+                    },
+                    "merged_at": {
+                        "type": "date"
+                    },
+                    "pushed_at": {
+                        "type": "date"
+                    },
+                    "topics": {
+                        "type": "text"
+                    },
+                    "body": {
+                        "type": "text"
+                    },
+                    "description": {
+                        "type": "text"
+                    },
+                    "project_age": {
+                        "type": "long"
+                    },
+                    "issue_age": {
+                        "type": "long"
+                    },
+                    "pull_age": {
+                        "type": "long"
+                    }
+                }
+            }
+        }
+    }
+}

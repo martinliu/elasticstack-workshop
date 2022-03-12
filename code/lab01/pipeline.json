@@ -1,0 +1,30 @@
+POST _ingest/pipeline/_simulate
+{
+  "pipeline": {
+    "processors": [
+      {
+        "script": {
+          "description": "How old is this opensource project?",
+          "lang": "painless",
+          "source": """
+          if (ctx['json.created_at'] != null ) {
+            ZonedDateTime zdt1 = ZonedDateTime.parse(ctx['json.created_at']);
+            ZonedDateTime zdt2 = ZonedDateTime.parse(ctx['json.updated_at']);
+            String nowString = params['now'];
+            long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+            ctx['project_age'] = years;
+          }
+          """
+        }
+      }
+    ]
+  },
+  "docs": [
+    {
+      "_source": {
+       "json.created_at": "2013-07-30T20:04:05Z",
+        "json.updated_at": "2015-07-30T20:04:05Z"
+      }
+    }
+  ]
+}
