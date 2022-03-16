@@ -1,4 +1,244 @@
+// overall 项目年龄计算
+if (doc['fields.kpi.keyword'].value == 'overall') {
+    ZonedDateTime zdt1 = doc['json.created_at'].value;
+    ZonedDateTime zdt2 = doc['event.created'].value;
+    long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+    return years 
+  } 
   
+// issue 的年龄计算
+if (doc['fields.kpi.keyword'].value == 'issues') {
+    if (doc['json.state'].value == 'open' ) {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['event.created'].value; //需要优化成 Today 的日期
+        long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+        return minutes 
+    } else {
+            ZonedDateTime zdt1 = doc['json.created_at'].value;
+            ZonedDateTime zdt2 = doc['json.closed_at'].value;
+            long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+            return minutes 
+    }
+} 
+
+// pull request 的年龄计算
+if (doc['fields.kpi.keyword'].value == 'pulls') {
+    if (doc['json.closed_at'].size() == 0 ) {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['event.created'].value; //需要优化成 Today 的日期
+        long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+        return minutes 
+    } else {
+            ZonedDateTime zdt1 = doc['json.created_at'].value;
+            ZonedDateTime zdt2 = doc['json.closed_at'].value;
+            long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+            return minutes 
+    }
+} 
+return 0
+
+//TODO： 1 zdt2 需要做当天日期的取值运算
+//TODO： 2 json.closed_at 需要换成 json.state 
+
+
+---backup 1
+
+// 对 overall 做项目年龄计算
+if (doc['fields.kpi.keyword'].value == 'overall') {
+    ZonedDateTime zdt1 = doc['json.created_at'].value;
+    ZonedDateTime zdt2 = doc['event.created'].value;
+    long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+    return years 
+} 
+  
+// 对 issue 做年龄计算
+if (doc['fields.kpi.keyword'].value == 'issues') {
+    if (doc['json.closed_at'].size() == 0 ) {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['event.created'].value;
+        long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+        return minutes 
+    } else {
+            ZonedDateTime zdt1 = doc['json.created_at'].value;
+            ZonedDateTime zdt2 = doc['json.closed_at'].value;
+            long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+            return minutes 
+    }
+} 
+
+// 对 pull request 做年龄计算
+if (doc['fields.kpi.keyword'].value == 'pulls') {
+    if (doc['json.closed_at'].size() == 0 ) {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['event.created'].value;
+        long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+        return minutes 
+    } else {
+            ZonedDateTime zdt1 = doc['json.created_at'].value;
+            ZonedDateTime zdt2 = doc['json.closed_at'].value;
+            long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+            return minutes 
+    }
+} 
+return 0
+
+//TODO： 1 zdt2 需要做当天日期的取值运算
+//TODO： 2 json.closed_at 需要换成 json.state 
+
+
+if (doc['fields.kpi.keyword'].value == 'overall') {
+    // do something if "item" is missing
+      ZonedDateTime zdt1 = doc['json.created_at'].value;
+      ZonedDateTime zdt2 = doc['json.updated_at'].value;
+      long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+      return years 
+} 
+
+if (doc['fields.kpi.keyword'].value == 'issues') {
+    // do something if "item" is missing
+  if (doc['json.closed_at'].size() == 0 ) {
+      ZonedDateTime zdt1 = doc['json.created_at'].value;
+      ZonedDateTime zdt2 = doc['event.created'].value;
+      long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+      return minutes 
+  } else {
+          ZonedDateTime zdt1 = doc['json.created_at'].value;
+          ZonedDateTime zdt2 = doc['json.closed_at'].value;
+          long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+          return minutes 
+  }
+} 
+
+if (doc['fields.kpi.keyword'].value == 'pulls') {
+    // do something if "item" is missing
+  if (doc['json.closed_at'].size() == 0 ) {
+      ZonedDateTime zdt1 = doc['json.created_at'].value;
+      ZonedDateTime zdt2 = doc['event.created'].value;
+      long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+      return minutes 
+  } else {
+          ZonedDateTime zdt1 = doc['json.created_at'].value;
+          ZonedDateTime zdt2 = doc['json.closed_at'].value;
+          long minutes = ChronoUnit.MINUTES.between(zdt1, zdt2);
+          return minutes 
+  }
+} 
+return 0
+
+
+PUT filebeat-7/_settings
+{
+  "index.mapping.total_fields.limit": 5000
+}
+
+
+
+if ( doc['json.created_at'].size() != 0)
+{
+    if ( doc['json.closed_at'].size() == 0 ) 
+    {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['json.updated_at'].value;
+        long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+        return years   
+    }
+    else
+    {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['json.closed_at'].value;
+        long days = ChronoUnit.DAYS.between(zdt1, zdt2);
+        return days
+    }
+}
+
+return 0
+
+----
+
+if (doc['fields.kpi'].value == 'overall') {
+    // do something if "item" is missing
+      ZonedDateTime zdt1 = doc['json.created_at'].value;
+      ZonedDateTime zdt2 = doc['json.updated_at'].value;
+      long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+      return years 
+  } else if (doc['fields.kpi'].value == 'issues') {
+    // do something if "item" value is: something
+          ZonedDateTime zdt1 = doc['json.created_at'].value;
+          ZonedDateTime zdt2 = doc['json.closed_at'].value;
+          long days = ChronoUnit.DAYS.between(zdt1, zdt2);
+          return days  
+  } else  if (doc['fields.kpi'].value == 'pulls') {
+    // do something else
+    return 0
+  }
+  return 0
+
+
+---
+
+if ( doc['json.created_at'].size() != 0)
+{
+    if ( doc['json.closed_at'].size() == 0 ) 
+    {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['json.updated_at'].value;
+        long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+        return years   
+    }
+    else
+    {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['json.closed_at'].value;
+        long days = ChronoUnit.DAYS.between(zdt1, zdt2);
+        return days
+    }
+}
+
+return 0
+
+
+
+if (doc['fields.kpi'] == 'overall')
+{
+    ZonedDateTime zdt1 = doc['json.created_at'].value;
+    ZonedDateTime zdt2 = doc['json.updated_at'].value;
+    long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+    return years  
+} else 
+
+
+"dynamic": "runtime",
+        "runtime": {
+            "project-age": {
+                "type": "long",
+                "script": {
+                    "source": "emit(doc['json.updated_at'].value.year - doc['json.created_at'].value.year)"
+                }
+            }
+        },
+
+if ( doc['json.created_at'].size() != 0)
+{
+    if ( doc['json.closed_at'].size() == 0 ) 
+    {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['json.updated_at'].value;
+        long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+        return years   
+    }
+    elase
+    {
+        ZonedDateTime zdt1 = doc['json.created_at'].value;
+        ZonedDateTime zdt2 = doc['json.updated_at'].value;
+        long years = ChronoUnit.YEARS.between(zdt1, zdt2);
+        return years
+    }
+}
+
+return 0
+
+
+
   if (   == "overall") {
     ZonedDateTime zdt1 = doc['overall.created_at'].value;
     ZonedDateTime zdt2 = doc['overall.updated_at'].value;
