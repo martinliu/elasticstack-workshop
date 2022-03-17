@@ -1,7 +1,7 @@
 {
     "order": 2,
     "index_patterns": [
-        "filebeat-7.17.0-*"
+        "filebeat-7-*"
     ],
     "mappings": {
         "properties": {

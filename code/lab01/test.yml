@@ -1,0 +1,220 @@
+###################### Filebeat Configuration Example #########################
+
+# ============================== Filebeat inputs ===============================
+
+filebeat.inputs:
+
+# ============================== 建议先获取这一部分的数据  ===============================
+# overall, contributors, releases, languages, tags 的数据少且重要，可以手工确认之后在做第二部分
+
+# 获取项目的概要信息 - overall
+# GET /repos/{owner}/{repo}
+- type: httpjson
+  interval: 120m
+  config_version: 2
+  request.url: https://api.github.com/repos/openshift/origin
+  request.method: GET 
+  # 在请求中增加个人认证令牌，提高数据获取条数限制
+  request.transforms:
+    - set:
+        target: header.Authorization
+        value: 'token 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'
+  # 使用数据处理器，修整数据
+  processors:
+    # 优化分析：增加方便搜索分析的字段  
+    - add_fields: 
+        fields:
+          project: origin
+          kpi: overall
+    # 解码裸json结果：将 message 字段中的 json 内容解码为多个字段
+    - decode_json_fields: 
+        fields: ["message"]
+        target: "json"
+
+
+# 获取项目的贡献者清单 - contributors
+# GET /repos/{owner}/{repo}/contributors 
+- type: httpjson
+  interval: 120m
+  config_version: 2
+  request.url: https://api.github.com/repos/openshift/origin/contributors
+  request.method: GET
+  # 在请求中增加个人认证令牌，提高数据获取条数限制
+  request.transforms:
+    - set:
+        target: header.Authorization
+        value: 'token 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'
+  # 滚动翻页：按照请求 url 中的页面大小向前翻页
+  response.pagination: 
+    - set: 
+        target: url.params.page
+        value: '[[add .last_response.page 1]]'
+        fail_on_template: true     
+  # 使用数据处理器修整数据
+  processors:
+    # 优化分析：增加方便搜索分析的字段  
+    - add_fields: 
+        fields:
+          project: origin
+          kpi: contributors
+    # 解码裸json结果：将 message 字段中的 json 内容解码为多个字段
+    - decode_json_fields: 
+        fields: ["message"]
+        target: "json"
+    # 去重处理：使用指纹处理器根据 id 创建文档的唯一标识
+    - fingerprint: 
+        fields: ["json.id"]
+        target_field: "@metadata._id"
+
+
+# 获取项目的版本发布历史 - releases  
+# GET /repos/{owner}/{repo}/releases
+- type: httpjson
+  interval: 120m
+  config_version: 2
+  request.url: https://api.github.com/repos/openshift/origin/releases
+  request.method: GET
+  # 在请求中增加个人认证令牌，提高数据获取条数限制
+  request.transforms:
+    - set:
+        target: header.Authorization
+        value: 'token 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'
+  # 滚动翻页：按照请求 url 中的页面大小向前翻页
+  response.pagination: 
+    - set: 
+        target: url.params.page
+        value: '[[add .last_response.page 1]]'
+        fail_on_template: true   
+  # 使用数据处理器，修整数据
+  processors:
+    # 优化分析：增加方便搜索分析的字段  
+    - add_fields: 
+        fields:
+          project: origin
+          kpi: releases
+    # 解码裸json结果：将 message 字段中的 json 内容解码为多个字段
+    - decode_json_fields: 
+        fields: ["message"]
+        target: "json"
+    # 去重处理：使用指纹处理器根据 id 创建文档的唯一标识
+    - fingerprint: 
+        fields: ["json.id"]
+        target_field: "@metadata._id"
+    # 设置时间戳：用 published_at 字段作为文档的时间戳 
+    - timestamp: 
+        field: json.published_at
+        layouts:
+          - '2006-01-02T15:04:05Z'
+          - '2006-01-02T15:04:05.999Z'
+          - '2006-01-02T15:04:05.999-07:00'
+        test:
+          - '2019-06-22T16:33:51Z'
+          - '2019-11-18T04:59:51.123Z'
+          - '2020-08-03T07:10:20.123456+02:00'
+
+# # 获取 origin 项目的各种编程语言的代码行数 - languages
+# # GET /repos/{owner}/{repo}/languages 
+- type: httpjson
+  interval: 120m
+  config_version: 2
+  request.url: https://api.github.com/repos/openshift/origin/languages
+  request.method: GET 
+  # 在请求中增加个人认证令牌，提高数据获取条数限制
+  request.transforms:
+    - set:
+        target: header.Authorization
+        value: 'token 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'
+  # 使用数据处理器，修整数据
+  processors:
+    # 优化分析：增加方便搜索分析的字段  
+    - add_fields: 
+        fields:
+          project: origin
+          kpi: languages
+    # 解码裸json结果：将 message 字段中的 json 内容解码为多个字段
+    - decode_json_fields: 
+        fields: ["message"]
+        target: "json"
+
+# # 获取 origin 项目的标签清单 - tags  
+# # GET /repos/{owner}/{repo}/tags  
+- type: httpjson
+  interval: 120m
+  config_version: 2
+  request.url: https://api.github.com/repos/openshift/origin/tags
+  request.method: GET
+  # 在请求中增加个人认证令牌，提高数据获取条数限制
+  request.transforms:
+    - set:
+        target: header.Authorization
+        value: 'token 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'
+  # 滚动翻页：按照请求 url 中的页面大小向前翻页
+  response.pagination: 
+    - set: 
+        target: url.params.page
+        value: '[[add .last_response.page 1]]'
+        fail_on_template: true   
+  # 使用数据处理器，修整数据
+  processors:
+    # 优化分析：增加方便搜索分析的字段  
+    - add_fields: 
+        fields:
+          project: origin
+          kpi: tags
+    # 解码裸json结果：将 message 字段中的 json 内容解码为多个字段
+    - decode_json_fields: 
+        fields: ["message"]
+        target: "json"
+    # 去重处理：使用指纹处理器根据 id 创建文档的唯一标识
+    - fingerprint: 
+        fields: ["json.node_id"]
+        target_field: "@metadata._id"
+
+# # ============================== 建议后获取这部分的数据  ===============================
+# # issues、 pulls 的数据量一般不会少，建议在 request.url 上使用 SINCE 参数，先获取进三个月的数据
+
+
+
+
+# ======================= Elasticsearch template setting =======================
+
+# 配置索引模版基础属性
+setup.template.overwrite: true
+setup.template.settings:
+  index.number_of_shards: 1
+  number_of_replicas: 0
+  index.mapping.total_fields.limit: 5000
+
+setup.template.name: "filebeat"
+setup.template.pattern: "filebeat-*"
+setup.template.fields: "fields.yml"
+
+# 修改部分 json 字段默认的数据类型
+setup.template.json.enabled: true
+setup.template.json.path: "add_gh_fields.json"
+setup.template.json.name: "add_gh_fields"
+
+# 禁用ilm功能
+setup.ilm.enabled: false
+
+# ================================== General ===================================
+name: github-crawler
+
+# ================================== Outputs ===================================
+
+# ---------------------------- Elasticsearch Output ----------------------------
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+  index: "filebeat-7"
+
+# ================================= Processors =================================
+# 删除 Filebeeat 采集到的无关数据，节省存储空间
+processors:
+ - drop_fields:
+     fields: ["ecs", "agent", "input", "host", "message"]    
+
+# ================================== Logging ===================================
+logging.level: debug
+
+# ============================= X-Pack Monitoring ==============================
+# monitoring.enabled: true

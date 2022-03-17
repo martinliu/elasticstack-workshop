@@ -1,3 +1,5 @@
+WORK console.log();
+
 // overall 项目年龄计算
 if (doc['fields.kpi.keyword'].value == 'overall') {
     ZonedDateTime zdt1 = doc['json.created_at'].value;
