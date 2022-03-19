@@ -30,11 +30,3 @@ Elkie：”我看到了一个ELK Stack。但是更容易使用。更可扩展。
 
 ![](https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/blt4d8cdb8b0187854d/5c11ee6cd4785dff77a3f413/elk-stack-social-ads-elkb.svg)
 Elkie：”显然，我的个性是ELKB型的。“
-
-
-## 准备事项
-
-* 确保正常稳定的互联网连接
-* 可以使用电脑的命令行工具
-* 操作系统能够解压缩下载的测试和配置数据文件。
-* 提前完成环境准备工作
