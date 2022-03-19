@@ -2,7 +2,7 @@ baseURL = "https://elastic.martinliu.cn/"
 
 languageCode = "zh-cn"
 DefaultContentLanguage = "zh-cn"
-title = "Elastic Stack Workshop"
+title = "Elastic Stack Workshop | 刘征 Developer Advocate @ Elastic"
 theme = "hugo-theme-techdoc"
 
 hasCJKLanguage = true
@@ -17,7 +17,7 @@ enableMissingTranslationPlaceholders = false
     # Souce Code repository section
     description = "搜索、观测、保护三大解决方案实战教程，各种级别和类型的学习资料，欢迎一起学习和共建。"
     github_repository = "https://github.com/martinliu/elasticstack-workshop"
-    version = "0.1.5"
+    version = "0.2.5"
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
@@ -76,10 +76,10 @@ enableMissingTranslationPlaceholders = false
         url = "/"
         weight = 1
 
-#    [[menu.main]]
-#        name = "工作坊"
-#        url = "https://twitter.com/thingsym"
-#        weight = 2
+   [[menu.main]]
+       name = "博客"
+       url = "https://martinliu.cn"
+       weight = 3
 
 # Markup configure section
 # See https://gohugo.io/getting-started/configuration-markup/
