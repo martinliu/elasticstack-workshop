@@ -1,4 +1,14 @@
-WORK console.log();
+洞察 GitHub 中开源项目的开发效能
+
+从此我在也不担心你只会数星星了。让我们用Kibana对项目开发效能做深度的探索吧！
+
+实战教程见：https://elastic.martinliu.cn/chapter1/2/
+
+开源项目的火热程度取决于技术创新和行业发展趋势，有很多风口浪尖的开源项目确实非常吸引人。GitHub 中的开源项目质量好不好，是不是数项目获得的星星就够了？该如何洞察开源项目的社区参与程度？如何判断项目核心开发团队的研发效能？为了回答这些颇具深度的问题，我们还需要对项目进行更深度的分析。本教程教你使用 Elastic Stack 构建 GitHub 开源项目的关键指标的分析看板，在 Kibana 中详细分析项目的几个重要维度。
+
+https://videos.elastic.co/watch/2xqpUL4ttAu7iPQQp6vrub?
+
+ORK console.log();
 
 // overall 项目年龄计算
 if (doc['fields.kpi.keyword'].value == 'overall') {
