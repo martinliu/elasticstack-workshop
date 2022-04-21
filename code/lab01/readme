@@ -1,5 +1,81 @@
 洞察 GitHub 中开源项目的开发效能
 
+
+[baseos]
+name=CentOS Linux $releasever - BaseOS
+baseurl=http://mirror/repository/$contentdir/$releasever/BaseOS/$basearch/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+
+[appstream]
+name=CentOS Linux $releasever - AppStream
+baseurl=http://mirror/repository/$contentdir/$releasever/AppStream/$basearch/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+
+[extras]
+name=CentOS Linux $releasever - Extras
+baseurl=http://mirror/repository/$contentdir/$releasever/extras/$basearch/os/
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+
+[epel]
+name=Extra Packages for Enterprise Linux $releasever - $basearch
+baseurl=http://mirror/repository/epel/$releasever/Everything/$basearch
+enabled=1
+gpgcheck=1
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
+
+[epel-modular]
+name=Extra Packages for Enterprise Linux Modular $releasever - $basearch
+baseurl=http://mirror/repository/epel/$releasever/Modular/$basearch
+enabled=1
+gpgcheck=1
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-8
+
+
+[ElasticStack7]
+name=Elastic Stack 7
+baseurl=http://192.168.1.173/repository/elastic7
+gpgcheck=0
+enabled=1
+
+[gitlab-ce]
+name=Gitlab CE
+baseurl=http://192.168.1.173/repository/gitlabce/el$releasever/
+gpgcheck=0
+enabled=1
+
+[gitlab-runner]
+name=Gitlab Runner
+baseurl=http://192.168.1.173/repository/gitlab-runner/el$releasever-$basearch/
+gpgcheck=0
+enabled=1
+
+[kubernetes]
+name=Kubernetes
+baseurl=http://mirrors/repository/k8s/kubernetes-el7-$basearch
+enabled=1
+
+[chef-stable]
+name=Chef - stable
+baseurl=http://mirrors/repository/chef/stable-el$releasever-x86_64/
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.chef.io/chef.asc
+
+[grafana]
+name=Grafana
+baseurl=http://mirrors/repository/grafana/
+enabled=1
+gpgcheck=0
+
+
 从此我在也不担心你只会数星星了。让我们用Kibana对项目开发效能做深度的探索吧！
 
 实战教程见：https://elastic.martinliu.cn/chapter1/2/
