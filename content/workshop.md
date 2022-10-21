@@ -8,6 +8,10 @@ menu = "main"
 
 ![3 solutions](/images/3-solutions.jpg)
 
+最新更新：
+
+* 2022 年 1 月：《Elastic Stack 技术栈配置指南（v8.4）》
+
 ## 企业搜索方案
 
 本工作坊的运行环境：
