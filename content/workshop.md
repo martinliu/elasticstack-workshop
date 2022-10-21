@@ -10,7 +10,7 @@ menu = "main"
 
 最新更新：
 
-* 2022 年 1 月：《Elastic Stack 技术栈配置指南（v8.4）》
+* 2022 年 1 月：[《Elastic Stack 技术栈配置指南（v8.4）》](https://elastic.martinliu.cn/codelabs/elastic-stack-quick-start-guide-84/#0)
 
 ## 企业搜索方案
 
