@@ -3,9 +3,6 @@ title = "教程"
 date = "2021-02-09"
 menu = "main"
 +++
-
-## 基于 Elastic Stack 的三大解决方案
-
 ![3 solutions](/images/3-solutions.jpg)
 
 最新更新：
@@ -23,9 +20,6 @@ menu = "main"
 工作坊课件：
 
 * [企业搜索实战-之App Search](/codelabs/entprise-search-foundation/#0)
-
-
-
 
 
 ## 可观测性
@@ -91,11 +85,6 @@ Elastic Security 安全管理工作坊的目标是：通过实操练习和必要
 
 2. [学员课堂学习指南 PPT](https://docs.qq.com/slide/DUG1qWklCTGJncXVO)
 
-
-
-##### AWS 云计算环境
-
-> 课件开发中。
 
 
 
